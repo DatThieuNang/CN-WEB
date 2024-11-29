@@ -32,8 +32,7 @@ $result = mysqli_query($conn, $sql);
               echo "<td>{$row['description']}</td>";
               echo "<td><img src='{$row['image']}' alt='{$row['name']}' width='100'></td>";
               echo "<td>
-                    <a href='edit.php?id={$row['id']}' title='Sửa'><i class='fas fa-pen-to-square'></i></a> | 
-                    <a href='delete.php?id={$row['id']}' title='Xóa' onclick='return confirm(\"Bạn có chắc chắn muốn xóa hoa này không?\")'><i class='fas fa-trash'></i></a>
+                   
                     </td>";
               echo "</tr>";
 }

@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root"; // Tài khoản mặc định của XAMPP
-$password = "";     // Mật khẩu mặc định là rỗng
+$username = "root";
+$password = "";     
 $dbname = "flower_db";
 
 // Kết nối

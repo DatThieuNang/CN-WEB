@@ -1,18 +1,26 @@
 <?php
-include('connect.php');
 
-if(isset($_GET['id'])) {
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "flowers_db";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    
-    // Xóa hoa trong cơ sở dữ liệu
+
     $sql = "DELETE FROM flowers WHERE id = $id";
-    if(mysqli_query($conn, $sql)) {
+    if ($conn->query($sql) === TRUE) {
         echo "Xóa thành công!";
-        header('Location: index.php'); // Quay lại trang danh sách
+        header("Location: index.php");
     } else {
-        echo "Lỗi: " . mysqli_error($conn);
+        echo "Lỗi: " . $conn->error;
     }
 }
 
-mysqli_close($conn);
+$conn->close();
 ?>

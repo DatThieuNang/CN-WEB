@@ -40,6 +40,8 @@
                   <button onclick="editFlower(${flower.id})">Sửa</button>
                   <button onclick="deleteFlower(${flower.id})">Xóa</button>
                 </td>
+                 <a href='edit.php?id={$row['id']}' title='Sửa'><i class='fas fa-pen-to-square'></i></a> | 
+                  <a href='delete.php?id={$row['id']}' title='Xóa' onclick='return confirm(\"Bạn có chắc chắn muốn xóa hoa này không?\")'><i class='fas fa-trash'></i></a>
               `;
               tbody.appendChild(row);
             });
